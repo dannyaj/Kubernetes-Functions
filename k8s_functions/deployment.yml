@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: apache-pod
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        service: http-pod
+    spec:
+      containers:
+      - name: hostname-hostname
+        image: francois/apache-hostname
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+

@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+  name: apache-pod
+spec:
+  serviceName: apache
+  replicas: 10
+  template:
+    metadata:
+      labels:
+        service: http-pod
+    spec:
+      containers:
+      - name: hostname-hostname
+        image: francois/apache-hostname
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+

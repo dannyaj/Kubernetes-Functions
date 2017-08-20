@@ -1,0 +1,14 @@
+apiVersio: v1
+kind: PersistentVolume
+metadata:
+  name: test-pv
+  labels:
+    type: test-pv
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  cinder:
+    fsType: ext4
+    volumeID: f57a0343-bea3-4a12-a57d-9355d651f20c
